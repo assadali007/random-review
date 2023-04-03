@@ -1,0 +1,96 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<style>
+img {
+    width: 290px;
+    height: 250px;
+    border-radius: 80px;
+}
+.pk {
+    text-align: center;
+}
+.pk p {
+    font-style: italic;
+    width: 600px;
+    display: inline flow-root list-item;
+}
+button {
+    text-align: center;
+    margin-left: 650px;
+    background-color: blanchedalmond;
+    padding: 15px 25px;
+    color: black;
+    border: 2px solid rebeccapurple;
+    font-weight: inherit;
+}
+</style>
+</head>
+<body>
+<div class="pk">
+    <p>Name : <span></span></p>
+</div>
+<button>click me</button>
+<script>
+  const data = [
+      {
+          images: "https://images.unsplash.com/photo-1612528443702-f6741f70a049?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8c2FtcGxlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+          name: "Asad",
+          professional : "web developer",
+          bio : "Edison bulb put a bird on it humblebrag, marfa pok pok heirloom "
+      },
+      {
+          images: "https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883423/person-4_t9nxjt.jpg",
+          name: "bill anderson",
+          professional : "the boss",
+          bio : "Edison bulb put a bird on it humblebrag, marfa pok pok heirloom " +
+              "fashion axe cray stumpto venmo actually seitan. VHS farm-to-table " +
+              "schlitz, edison bulb pop-up 3 wolf +moon tote bag street art shabby chic"
+      },
+      {
+          images: "https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883334/person-1_rfzshl.jpg",
+          name: "susan smith",
+          professional: "designer",
+          bio : "I'm baby meggings twee health goth +1. Bicycle rights tumeric chartreuse " +
+              "before they sold out chambray pop-up. Shaman humblebrag pickled coloring book " +
+              "salvia hoodie, cold-pressed four dollar toast everyday carry"
+      },
+      {
+          images: "https://images.unsplash.com/photo-1604537466158-719b1972feb8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80",
+          name: " smith",
+          professional: "art",
+          bio : "I'm baby meggings twee health goth +1. Bicycle rights tumeric chartreuse " +
+              "before they sold out chambray pop-up. Shaman humblebrag pickled coloring book " +
+              "salvia hoodie, cold-pressed four dollar toast everyday carry"
+
+
+      }
+  ]
+
+
+
+  const selectElement = document.querySelector("div.pk ");
+  selectElement.innerHTML = `<img src=${data[0].images} alt="hello"/>
+      <h1>Name: ${data[0].name}</h1>
+      <h3>Professional : ${data[0].professional}</h3>
+      <p>Bio :${data[0].bio}</p>
+  `
+
+  const selectButton = document.querySelector("button");
+  selectButton.addEventListener("click",() => {
+      const number = Math.floor(Math.random()*data.length);
+
+
+      selectElement.innerHTML = `<img src=${data[number].images} alt="hello"/>
+      <h1>Name: ${data[number].name}</h1>
+      <h3>Professional : ${data[number].professional}</h3>
+      <p>Bio : ${data[number].bio}</p>
+`
+  })
+</script>
+
+
+</body>
+</html>
